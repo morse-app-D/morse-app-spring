@@ -9,27 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-
-            
-            
-            Button(action: {
-                print(manager.stringToMorce(string: "いつか"))
-            }, label: {
-                Text("to morse")
-            })
-            
-            Button(action: {
-                soundPlayer.morsePlay(morse: [[0,1], [0,1,1,0], [0,1,0,0]])
-//                soundPlayer.morsePlay(morse: [[0]])
-            }, label: {
-                Text("play morse")
-            })
+      HomeView()
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+}
+
+extension Color {
+    static let backColor = Color("BackColor")
 }
