@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		198438322BB2861E00DD767B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438312BB2861E00DD767B /* Manager.swift */; };
+		198438342BB2862D00DD767B /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438332BB2862D00DD767B /* Material.swift */; };
+		198438362BB2865900DD767B /* MorseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438352BB2865900DD767B /* MorseData.swift */; };
 		CEC8B8ED2BB1AAD4002317CC /* morse_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */; };
 		CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */; };
 		CEC8B8F12BB1AAD5002317CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		198438312BB2861E00DD767B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		198438332BB2862D00DD767B /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		198438352BB2865900DD767B /* MorseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseData.swift; sourceTree = "<group>"; };
 		CEC8B8E92BB1AAD4002317CC /* morse-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "morse-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = morse_appApp.swift; sourceTree = "<group>"; };
 		CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			children = (
 				CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */,
 				CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */,
+				198438312BB2861E00DD767B /* Manager.swift */,
+				198438332BB2862D00DD767B /* Material.swift */,
+				198438352BB2865900DD767B /* MorseData.swift */,
 				CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */,
 				CEC8B8F22BB1AAD5002317CC /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198438362BB2865900DD767B /* MorseData.swift in Sources */,
+				198438342BB2862D00DD767B /* Material.swift in Sources */,
 				CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */,
+				198438322BB2861E00DD767B /* Manager.swift in Sources */,
 				CEC8B8ED2BB1AAD4002317CC /* morse_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
