@@ -10,10 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+
+            
+            
+            Button(action: {
+                print(manager.stringToMorce(string: "いつか"))
+            }, label: {
+                Text("to morse")
+            })
+            
+            Button(action: {
+                soundPlayer.morsePlay(morse: [[0,1], [0,1,1,0], [0,1,0,0]])
+//                soundPlayer.morsePlay(morse: [[0]])
+            }, label: {
+                Text("play morse")
+            })
         }
         .padding()
     }
