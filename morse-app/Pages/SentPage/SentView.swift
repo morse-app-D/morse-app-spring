@@ -47,6 +47,7 @@ struct TopBar: View {
 struct ListView: View {
     @ObservedObject var viewModel: SentViewModel
     var body: some View {
+        //["",""]
         List(viewModel.sentMessages)  { messages in
             VStack {
                 HStack {
