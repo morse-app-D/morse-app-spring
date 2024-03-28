@@ -176,53 +176,29 @@
 			path = "morse-app/Pages";
 			sourceTree = SOURCE_ROOT;
 		};
-		199D7E352BB503CB00BE35D1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				199D7E342BB503CB00BE35D1 /* HomeView.swift */,
-				199D7E412BB50B7700BE35D1 /* ViewModel */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		199D7E362BB503CB00BE35D1 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				199D7E352BB503CB00BE35D1 /* Views */,
+				199D7E422BB50B8D00BE35D1 /* HomeViewModel.swift */,
+				199D7E342BB503CB00BE35D1 /* HomeView.swift */,
 			);
 			path = HomePage;
-			sourceTree = "<group>";
-		};
-		199D7E382BB503CB00BE35D1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				199D7E372BB503CB00BE35D1 /* ProfileView.swift */,
-				199D7E442BB50B9F00BE35D1 /* ViewModel */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		199D7E392BB503CB00BE35D1 /* ProfilePage */ = {
 			isa = PBXGroup;
 			children = (
-				199D7E382BB503CB00BE35D1 /* Views */,
+				199D7E372BB503CB00BE35D1 /* ProfileView.swift */,
+				199D7E452BB50BB500BE35D1 /* ProfileViewModel.swift */,
 			);
 			path = ProfilePage;
-			sourceTree = "<group>";
-		};
-		199D7E3B2BB503CB00BE35D1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				199D7E3A2BB503CB00BE35D1 /* SentView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		199D7E3C2BB503CB00BE35D1 /* SentPage */ = {
 			isa = PBXGroup;
 			children = (
-				199D7E3B2BB503CB00BE35D1 /* Views */,
-				199D7E492BB50C0F00BE35D1 /* ViewModel */,
+				199D7E3A2BB503CB00BE35D1 /* SentView.swift */,
+				199D7E472BB50BC400BE35D1 /* SentViewModel.swift */,
 			);
 			path = SentPage;
 			sourceTree = "<group>";
@@ -237,52 +213,38 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
-		199D7E412BB50B7700BE35D1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				199D7E422BB50B8D00BE35D1 /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		199D7E442BB50B9F00BE35D1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				199D7E452BB50BB500BE35D1 /* ProfileViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		199D7E492BB50C0F00BE35D1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				199D7E472BB50BC400BE35D1 /* SentViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5DDECBD22BB5251D002ABF34 /* ViewModel */ = {
+		5DDECBD62BB5251D002ABF34 /* VariousOtherThings */ = {
 			isa = PBXGroup;
 			children = (
 				5DDECBD32BB5251D002ABF34 /* GetViewModel.swift */,
 				5DDECBD42BB5251D002ABF34 /* SetProfileViewModel.swift */,
 				5DDECBD52BB5251D002ABF34 /* SendViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5DDECBD62BB5251D002ABF34 /* VariousOtherThings */ = {
-			isa = PBXGroup;
-			children = (
 				5DDECBD72BB5251D002ABF34 /* SendToDB.swift */,
 				5DDECBD82BB5251D002ABF34 /* CheckPermission.swift */,
 				5DDECBD92BB5251D002ABF34 /* ChangeImageSize.swift */,
 				5DDECBDA2BB5251D002ABF34 /* AsyncCompactMap.swift */,
-				5DDECBDB2BB5251D002ABF34 /* FirebaseClient.swift */,
-				5DDECBDC2BB5251D002ABF34 /* Models.swift */,
 				5DDECBDD2BB5251D002ABF34 /* UIImagePickerView.swift */,
 			);
 			path = VariousOtherThings;
+			sourceTree = "<group>";
+		};
+		5DDECC0D2BB527B8002ABF34 /* MorseManagers */ = {
+			isa = PBXGroup;
+			children = (
+				198438312BB2861E00DD767B /* Manager.swift */,
+				198438332BB2862D00DD767B /* Material.swift */,
+				198438352BB2865900DD767B /* MorseData.swift */,
+				198438372BB290D400DD767B /* SoundPlayer.swift */,
+			);
+			path = MorseManagers;
+			sourceTree = "<group>";
+		};
+		5DDECC0E2BB527D7002ABF34 /* Asseets */ = {
+			isa = PBXGroup;
+			children = (
+				4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */,
+			);
+			path = Asseets;
 			sourceTree = "<group>";
 		};
 		CEC8B8E02BB1AAD4002317CC = {
@@ -307,15 +269,13 @@
 				4DEE1E2E2BB3F094009FA417 /* Info.plist */,
 				CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */,
 				CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */,
-				4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */,
+				5DDECBDC2BB5251D002ABF34 /* Models.swift */,
+				5DDECBDB2BB5251D002ABF34 /* FirebaseClient.swift */,
+				5DDECC0D2BB527B8002ABF34 /* MorseManagers */,
 				199D7E3D2BB503CB00BE35D1 /* Pages */,
-				198438312BB2861E00DD767B /* Manager.swift */,
-				198438332BB2862D00DD767B /* Material.swift */,
-				198438352BB2865900DD767B /* MorseData.swift */,
-				198438372BB290D400DD767B /* SoundPlayer.swift */,
 				5DDECBD62BB5251D002ABF34 /* VariousOtherThings */,
-				5DDECBD22BB5251D002ABF34 /* ViewModel */,
 				CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */,
+				5DDECC0E2BB527D7002ABF34 /* Asseets */,
 				CEC8B8F22BB1AAD5002317CC /* Preview Content */,
 			);
 			path = "morse-app";
