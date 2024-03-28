@@ -17,7 +17,7 @@ enum FirebaseClientFirestoreError: Error {
     case roomDataNotFound
 }
 
-class FirebaseClient {
+enum FirebaseClient {
     
     static let db = Firestore.firestore()
     
@@ -48,9 +48,25 @@ class FirebaseClient {
         try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("friends").addDocument(data: encoded)
     }
     
-    static func saveSendedMessages(uid: Message) async throws {
+    static func savesentMessages(uid: Message) async throws {
         guard let encoded = try? Firestore.Encoder().encode(uid) else { return }
-        try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("sendedMessage").addDocument(data: encoded)
+        try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("sentMessage").addDocument(data: encoded)
+    }
+    
+    static func getsentMessages() async throws -> [Message] {
+        var documentDatas = [Message]()
+        let db = Firestore.firestore()
+        let snapshot = try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("sentMessages").getDocuments()
+        let documents = snapshot.documents
+        for document in documents {
+            do {
+                let data = try document.data(as: Message.self)
+                documentDatas.append(data)
+            } catch {
+                print("再生済み曲の取得失敗",error.localizedDescription)
+            }
+        }
+        return documentDatas
     }
     
     static func watchedMessage(documentId: String) async throws {
