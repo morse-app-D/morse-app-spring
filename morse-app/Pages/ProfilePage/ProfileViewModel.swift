@@ -9,10 +9,10 @@ import SwiftUI
 
 class ProfileViewModel {
     
-    @Published var getProfile: [ProfileData] = []
+    @Published var getProfile: [friendDatas] = []
     
     func getSentMessage() async throws {
-        getProfile = try await FirebaseClient.getProfileData()
+//        getProfile = try await FirebaseClient.getProfileData(uid: T##String)
     }
     
 }
