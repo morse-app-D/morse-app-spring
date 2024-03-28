@@ -63,38 +63,59 @@ class SoundPlayer: NSObject {
 //
 //    }
     
-    func setup(morse: [[Int]], completion: @escaping (Any) -> Void) {
+    func createShort() -> AVAudioPlayer? {
+        var sound: AVAudioPlayer
+        
+        do {
+            sound = try AVAudioPlayer(data: short)
+            return sound
+        } catch {
+            print("Error add short sound")
+            return nil
+        }
+        
+    }
+    
+    func createLong() -> AVAudioPlayer? {
+        var sound: AVAudioPlayer
+        
+        do {
+            sound = try AVAudioPlayer(data: long)
+            return sound
+        } catch {
+            print("Error add short sound")
+            return nil
+        }
+        
+    }
+    
+    func setup(morse: [[Int]], shortSound: AVAudioPlayer, longSound: AVAudioPlayer, completion: @escaping (Any) -> Void) {
         
         self.morse = morse
+        
         
         datas = []
         for mrs in morse {
             
             var data: [AVAudioPlayer] = []
             for int in mrs {
-                var player: AVAudioPlayer
                 if int == 0 {
-                    do {
-                        player = try AVAudioPlayer(data: short)
-                        data.append(player)
-                    } catch {
-                        print("Error add player")
-                    }
+                    data.append(shortSound)
+
                 } else {
-                    do {
-                        player = try AVAudioPlayer(data: long)
-                        data.append(player)
-                    } catch {
-                        print("Error add player")
-                    }
+                    data.append(longSound)
+
                 }
+                print("1音")
             }
+            print("1文字")
             datas.append(data)
             
         }
         
         completion(true)
     }
+    
     
     func playMorse() async {
         for dataNum in 0..<datas.count {
