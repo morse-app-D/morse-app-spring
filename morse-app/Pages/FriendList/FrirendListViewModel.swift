@@ -15,5 +15,4 @@ class FriendListViewModel: ObservableObject {
         friendList = try await FirebaseClient.getAllUsers()
     }
     
-    
 }

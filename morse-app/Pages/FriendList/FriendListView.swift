@@ -58,6 +58,7 @@ struct FriendListView: View {
     }
     
     func urlToImage(_ url: URL) -> UIImage {
+        
         do {
             let data = try Data(contentsOf: url)
             return UIImage(data: data)!
