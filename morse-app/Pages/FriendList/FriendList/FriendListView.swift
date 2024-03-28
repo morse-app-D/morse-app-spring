@@ -93,5 +93,5 @@ struct TopBarView: View {
 }
 
 #Preview {
-    FriendListView()
+    FriendListView(viewModel: FriendListViewModel())
 }
