@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         ZStack {
-//            Color(#colorLiteral(red: 0.8823529481887817, green: 0.8392156958580017, blue: 0.7882353067398071, alpha: 1)).edgesIgnoringSafeArea(.all)
             Color.backColor
                 .ignoresSafeArea()
             
@@ -12,10 +13,14 @@ struct ProfileView: View {
                     Button(action: {
                         // ボタンがタップされた時のアクション
                     }) {
-                        Text("Done")
-                            .font(.custom("851Gkktt", size: 16))
-                            .foregroundColor(.white)
-                            .padding()
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            Text("Done")
+                                .font(.custom("851Gkktt", size: 16))
+                                .foregroundColor(.white)
+                                .padding()
+                        })
                     }
                     .padding(.top)
                     .padding()
@@ -87,4 +92,8 @@ struct ProfileView: View {
             }
         }
     }
+}
+
+#Preview {
+    ProfileView()
 }
