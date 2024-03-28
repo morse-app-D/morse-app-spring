@@ -12,6 +12,9 @@
 		198438362BB2865900DD767B /* MorseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438352BB2865900DD767B /* MorseData.swift */; };
 		198438382BB290D400DD767B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438372BB290D400DD767B /* SoundPlayer.swift */; };
 		210CC5612BB3FDA9007404FC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210CC5602BB3FDA9007404FC /* HomeView.swift */; };
+		4DEE1E2A2BB30D6E009FA417 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE1E292BB30D6E009FA417 /* ProfileView.swift */; };
+		4DEE1E2C2BB3BCA6009FA417 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE1E2B2BB3BCA6009FA417 /* HomeView.swift */; };
+		4DEE1E2F2BB3F0E8009FA417 /* 851Gkktt_005.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */; };
 		CEC8B8ED2BB1AAD4002317CC /* morse_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */; };
 		CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */; };
 		CEC8B8F12BB1AAD5002317CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */; };
@@ -24,6 +27,10 @@
 		198438352BB2865900DD767B /* MorseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseData.swift; sourceTree = "<group>"; };
 		198438372BB290D400DD767B /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		210CC5602BB3FDA9007404FC /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4DEE1E292BB30D6E009FA417 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4DEE1E2B2BB3BCA6009FA417 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 851Gkktt_005.ttf; sourceTree = "<group>"; };
+		4DEE1E2E2BB3F094009FA417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEC8B8E92BB1AAD4002317CC /* morse-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "morse-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = morse_appApp.swift; sourceTree = "<group>"; };
 		CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,8 +68,12 @@
 		CEC8B8EB2BB1AAD4002317CC /* morse-app */ = {
 			isa = PBXGroup;
 			children = (
+				4DEE1E2E2BB3F094009FA417 /* Info.plist */,
 				CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */,
 				CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */,
+				4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */,
+				4DEE1E292BB30D6E009FA417 /* ProfileView.swift */,
+				4DEE1E2B2BB3BCA6009FA417 /* HomeView.swift */,
 				198438312BB2861E00DD767B /* Manager.swift */,
 				198438332BB2862D00DD767B /* Material.swift */,
 				198438352BB2865900DD767B /* MorseData.swift */,
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC8B8F42BB1AAD5002317CC /* Preview Assets.xcassets in Resources */,
+				4DEE1E2F2BB3F0E8009FA417 /* 851Gkktt_005.ttf in Resources */,
 				CEC8B8F12BB1AAD5002317CC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +170,8 @@
 				CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */,
 				198438322BB2861E00DD767B /* Manager.swift in Sources */,
 				198438382BB290D400DD767B /* SoundPlayer.swift in Sources */,
+				4DEE1E2C2BB3BCA6009FA417 /* HomeView.swift in Sources */,
+				4DEE1E2A2BB30D6E009FA417 /* ProfileView.swift in Sources */,
 				CEC8B8ED2BB1AAD4002317CC /* morse_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +309,7 @@
 				DEVELOPMENT_TEAM = F584ZURPSX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "morse-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -325,6 +340,7 @@
 				DEVELOPMENT_TEAM = F584ZURPSX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "morse-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

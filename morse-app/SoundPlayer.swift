@@ -18,48 +18,104 @@ class SoundPlayer: NSObject {
     let short = NSDataAsset(name: MorseSound.short.rawValue)!.data
     var musicPlayer: AVAudioPlayer!
     
-    var datas: [AVAudioPlayer] = []
+    var datas: [[AVAudioPlayer]] = []
+    var morse: [[Int]] = []
     
-    func morsePlay(morse: [[Int]]) {
-        for mrc in morse {
-            
-            soundPlayer(mrc: mrc)
-            print("1文字")
-            Thread.sleep(forTimeInterval: 0.2)
-        }
-    }
-
-    //  1音再生
-    func soundPlayer(mrc: [Int]){
+//    func morsePlay(morse: [[Int]]) {
+//        for mrc in morse {
+//            
+//            soundPlayer(mrc: mrc)
+//            print("1文字")
+//            Thread.sleep(forTimeInterval: 0.2)
+//        }
+//    }
+//
+//    //  音再生
+//    func soundPlayer(mrc: [Int]){
+//        
+//        datas = []
+//
+//        for int in mrc {
+//            var player: AVAudioPlayer
+//            if int == 0 {
+//                do {
+//                    
+//                    player = try AVAudioPlayer(data: short)
+//                    datas.append(player)
+//                } catch {
+//                    print("Error play morse")
+//                }
+//            } else {
+//                do {
+//                    player = try AVAudioPlayer(data: long)
+//                    datas.append(player)
+//                } catch {
+//                    print("Error play morse")
+//                }
+//            }
+//        }
+//        print("datasCount", datas.count)
+//        for data in datas {
+//            print("fast")
+//            data.play()
+//            Thread.sleep(forTimeInterval: 0.3)
+//        }
+//
+//    }
+    
+    func setup(morse: [[Int]], completion: @escaping (Any) -> Void) {
+        
+        self.morse = morse
         
         datas = []
-
-        for int in mrc {
-            var player: AVAudioPlayer
-            if int == 0 {
-                do {
-                    
-                    player = try AVAudioPlayer(data: short)
-                    datas.append(player)
-                } catch {
-                    print("Error play morse")
-                }
-            } else {
-                do {
-                    player = try AVAudioPlayer(data: long)
-                    datas.append(player)
-                } catch {
-                    print("Error play morse")
+        for mrs in morse {
+            
+            var data: [AVAudioPlayer] = []
+            for int in mrs {
+                var player: AVAudioPlayer
+                if int == 0 {
+                    do {
+                        player = try AVAudioPlayer(data: short)
+                        data.append(player)
+                    } catch {
+                        print("Error add player")
+                    }
+                } else {
+                    do {
+                        player = try AVAudioPlayer(data: long)
+                        data.append(player)
+                    } catch {
+                        print("Error add player")
+                    }
                 }
             }
+            datas.append(data)
+            
         }
-        print("datasCount", datas.count)
-        for data in datas {
-            print("fast")
-            data.play()
-            Thread.sleep(forTimeInterval: 0.3)
+        
+        completion(true)
+    }
+    
+    func playMorse() async {
+        for dataNum in 0..<datas.count {
+            do {
+                print("一文字")
+                for index in 0..<datas[dataNum].count {
+                    
+                    datas[dataNum][index].play()
+                    print("play")
+                    
+                    if morse[dataNum][index] == 0 {
+                        try await Task.sleep(nanoseconds: 130_000_000)
+                    } else {
+                        try await Task.sleep(nanoseconds: 250_000_000)
+                    }
+                }
+                try await Task.sleep(nanoseconds: 100_000_000)
+            } catch {
+                print("Error play sound")
+            }
         }
-
     }
 
     // 音楽を停止
