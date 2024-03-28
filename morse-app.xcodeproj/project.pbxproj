@@ -11,6 +11,7 @@
 		198438342BB2862D00DD767B /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438332BB2862D00DD767B /* Material.swift */; };
 		198438362BB2865900DD767B /* MorseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438352BB2865900DD767B /* MorseData.swift */; };
 		198438382BB290D400DD767B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198438372BB290D400DD767B /* SoundPlayer.swift */; };
+		210CC5612BB3FDA9007404FC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210CC5602BB3FDA9007404FC /* HomeView.swift */; };
 		CEC8B8ED2BB1AAD4002317CC /* morse_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */; };
 		CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */; };
 		CEC8B8F12BB1AAD5002317CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		198438332BB2862D00DD767B /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		198438352BB2865900DD767B /* MorseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseData.swift; sourceTree = "<group>"; };
 		198438372BB290D400DD767B /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		210CC5602BB3FDA9007404FC /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CEC8B8E92BB1AAD4002317CC /* morse-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "morse-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = morse_appApp.swift; sourceTree = "<group>"; };
 		CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				198438332BB2862D00DD767B /* Material.swift */,
 				198438352BB2865900DD767B /* MorseData.swift */,
 				198438372BB290D400DD767B /* SoundPlayer.swift */,
+				210CC5602BB3FDA9007404FC /* HomeView.swift */,
 				CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */,
 				CEC8B8F22BB1AAD5002317CC /* Preview Content */,
 			);
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				198438362BB2865900DD767B /* MorseData.swift in Sources */,
+				210CC5612BB3FDA9007404FC /* HomeView.swift in Sources */,
 				198438342BB2862D00DD767B /* Material.swift in Sources */,
 				CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */,
 				198438322BB2861E00DD767B /* Manager.swift in Sources */,
@@ -288,6 +292,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"morse-app/Preview Content\"";
+				DEVELOPMENT_TEAM = F584ZURPSX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,12 +300,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kiyono.morse-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morse-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -316,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"morse-app/Preview Content\"";
+				DEVELOPMENT_TEAM = F584ZURPSX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -323,12 +330,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kiyono.morse-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morse-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
