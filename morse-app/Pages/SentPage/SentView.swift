@@ -50,8 +50,13 @@ struct TopBar: View {
 struct ListView: View {
     @StateObject var viewModel: SentViewModel
     var body: some View {
-//        List([Message(sender: "", body: "", time: nil, isOpened: false, toId: "")])  { messages in
-        List(viewModel.sentMessages, id: \.self)  { messages in
+// <<<<<<< feature/create-friendList
+//         //["",""]
+//         List(viewModel.sentMessages)  { messages in
+// =======
+// //        List([Message(sender: "", body: "", time: nil, isOpened: false, toId: "")])  { messages in
+//         List(viewModel.sentMessages, id: \.self)  { messages in
+// >>>>>>> main
             VStack {
                 HStack {
                     Image("CassetteWidget")

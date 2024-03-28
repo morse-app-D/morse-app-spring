@@ -1,4 +1,8 @@
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
+import FirebaseFirestoreSwift
 
 struct Friend: Identifiable {
     var id = UUID()
@@ -7,24 +11,20 @@ struct Friend: Identifiable {
 }
 
 struct FriendListView: View {
-    let friends = [
-        Friend(name: "友達1", imageName: "friend1_image"),
-        Friend(name: "友達2", imageName: "friend2_image"),
-        Friend(name: "友達3", imageName: "friend3_image")
-    ]
+    @ObservedObject var viewModel: FriendListViewModel
+
     
     var body: some View {
         ZStack {
             Color.backColor
                 .ignoresSafeArea()
-            
             VStack {
                 TopBarView()
                     .padding()
-                ForEach(friends) { friend in
+                ForEach(viewModel.friendList, id: \.uid) { friend in
                     VStack{ // セルごとの間隔を設定
                         HStack {
-                            Image(friend.imageName)
+                            Image(uiImage: urlToImage(friend.image!)) //imageはURLだから変換する必要がある
                                 .resizable() //動的にサイズ変更
                                 .frame(width: 56, height: 56)
                                 .padding(.leading, 50)
@@ -53,7 +53,22 @@ struct FriendListView: View {
             .padding(.top, -300)
         }
     }
+    
+    func urlToImage(_ url: URL) -> UIImage {
+//        let url = URL(string: string)
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data)!
+        } catch {
+            print("Error url to image")
+        }
+        
+        return UIImage()
+    }
 }
+
+
+
 
 struct TopBarView: View {
     var body: some View {
