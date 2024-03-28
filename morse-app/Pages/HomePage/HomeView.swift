@@ -56,23 +56,31 @@ struct Cassette: View {
 }
 
 struct TopButton: View {
+    @State private var toProfileView = false
+    @State private var toSendView = false
     var body: some View {
         HStack {
             Button(action: {
-
+                self.toProfileView = true
             }, label: {
                 Image(systemName: "person.circle")
             })
-            .font(.system(size: 32))
+            .font(.system(size: 40))
             .foregroundColor(.white)
-            Button(action: {
-
-            }, label: {
-                Image(systemName: "paperplane.circle")
+            .sheet(isPresented: $toProfileView, content: {
+                ProfileView()
             })
-            .font(.system(size: 32))
+            Button(action: {
+                self.toSendView = true
+            }, label: {
+                Image(systemName: "square.and.pencil.circle")
+            })
+            .font(.system(size: 40))
             .foregroundColor(.white)
             .padding(.leading, 240)
+//            .sheet(isPresented: $toSendView, content: {
+//                SendView()
+//            })
         }
     }
 }
