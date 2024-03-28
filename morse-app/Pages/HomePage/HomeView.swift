@@ -1,4 +1,8 @@
 import SwiftUI
+import AVFoundation
+
+let musicData = NSDataAsset(name: "cassette-open")!.data
+private var musicPlayer: AVAudioPlayer!
 
 struct HomeView: View {
     var body: some View {
@@ -10,10 +14,11 @@ struct HomeView: View {
                 Spacer()
             }
             VStack {
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(1..<10) { index in
-                            Cassette()
+                            //ここの()はBool型のやつ
+                            Cassette(readed: true)
                         }
                         .scrollTransition(axis: .horizontal) {
                             content,
@@ -31,27 +36,67 @@ struct HomeView: View {
 }
 
 struct Cassette: View {
+    @State var readed: Bool
+    //toひかる:ここでtrue,false変えてるから既読の判定入れてほしい！あとはif文だから！73行目(if readed == true)のところ適当に変えてほしい！
+    @State private var flag = true
+    
     var body: some View {
         VStack(alignment: .center) {
-            Button(action: {
-                print("button pressed")
-            },label:  {
+            if flag {
+                Button {
+                    do {
+                        withAnimation(Animation.linear(duration: 2)){
+                            self.flag.toggle()
+                        }
+                        musicPlayer = try AVAudioPlayer(data: musicData)
+                        musicPlayer.play()
+                        self.readed = false
+                    } catch {
+                        print("音の再生に失敗しました")
+                    }
+                } label: {
+                    Image("CassetteWidget2")
+                        .resizable()
+                        .opacity(0.6)
+                        .frame(width: 230, height: 230)
+                        .scaledToFill()
+                }
+                .buttonStyle(TapButtonStyle())
+                .padding(.bottom, 40)
+            } else {
                 Image("CassetteWidget")
                     .resizable()
-                    .scaledToFill()
                     .frame(width: 230, height: 230)
-                    .clipShape(Rectangle())
+                    .scaledToFit()
                     .padding(.bottom, 40)
-            })
-            VStack {
-                Text("本文")
-                Text("by: \("名前")")
             }
-            .frame(width: 230, height: 125)
-            .background(.white)
-            .cornerRadius(25)
+            if readed == true {
+                VStack {
+                    Text("")
+                    Text("")
+                }
+                .frame(width: 230, height: 125)
+                .background(.clear)
+                .cornerRadius(25)
+            } else {
+                VStack {
+                    Text("本文")
+                    Text("by: \("名前")")
+                }
+                .frame(width: 230, height: 125)
+                .background(.white)
+                .cornerRadius(25)
+            }
         }
         .padding(.trailing)
+        //        }
+    }
+}
+
+struct TapButtonStyle : ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label //Button本体
+            .background(.clear)
     }
 }
 
