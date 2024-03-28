@@ -12,10 +12,10 @@ import FirebaseFirestore
 
 class SendViewModel: NSObject, ObservableObject {
     
-    func sendMessage(text: String) {
+    func sendMessage(text: String, toId: String) {
         Task {
-            let message = Message(sender: Auth.auth().currentUser!.uid, body: text, time: Timestamp(date: .now), isOpened: false)
-            try await FirebaseClient.sendMessage(message: message, uid: "a")
+            let message = Message(sender: Auth.auth().currentUser!.uid, body: text, time: Timestamp(date: .now), isOpened: false, toId: toId)
+            try await FirebaseClient.sendMessage(message: message, uid: toId)
         }
     }
 }

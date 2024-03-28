@@ -12,6 +12,7 @@ import FirebaseAuth
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
         FirebaseApp.configure()
 
         Auth.auth().addStateDidChangeListener { auth, user in
@@ -22,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                     }
                     Task {
                         do {
-                            let profileData = ProfileData(imageUrl: URL(string: ""), name: "")
+                            let profileData = friendDatas(name: "", image: URL(string: ""))
                             try await FirebaseClient.settingProfile(data: profileData, uid: Auth.auth().currentUser!.uid)
 
                             UserDefaults.standard.set(true, forKey: "logIned")
@@ -46,12 +47,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-
 @main
-struct morse_appApp: App {
+struct spring_canp2024App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }

@@ -25,20 +25,20 @@ class SetProfileViewModel: NSObject, ObservableObject {
             if image.size.width * image.scale > image.size.height * image.scale {
                 
                 let imaegChangedSize = image.widthResize(image: image, width: 500)
-                imageUrl = await sendToDBModel.uploadProfileImage(image: imaegChangedSize, name: userData.name!)
+                imageUrl = await sendToDBModel.uploadProfileImage(image: imaegChangedSize, name: userData.name)
                 
             } else if image.size.width * image.scale < image.size.height * image.scale {
                 
                 let imaegChangedSize = image.heightResize(image: image, height: 500)
-                imageUrl = await sendToDBModel.uploadProfileImage(image: imaegChangedSize, name: userData.name!)
+                imageUrl = await sendToDBModel.uploadProfileImage(image: imaegChangedSize, name: userData.name)
                 
             } else {
                 print(maxSize.description)
                 let imaegChangedSize = image.resize(targetSize: CGSize(width: 500, height: 500))
-                imageUrl = await sendToDBModel.uploadProfileImage(image: imaegChangedSize, name: userData.name!)
+                imageUrl = await sendToDBModel.uploadProfileImage(image: imaegChangedSize, name: userData.name)
             }
         } else {
-            imageUrl = await sendToDBModel.uploadProfileImage(image: image, name: userData.name!)
+            imageUrl = await sendToDBModel.uploadProfileImage(image: image, name: userData.name)
         }
         
     }

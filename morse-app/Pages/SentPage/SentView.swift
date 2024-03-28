@@ -1,5 +1,6 @@
 
 import SwiftUI
+import FirebaseFirestore
 
 struct SentView: View {
     @ObservedObject var viewModel: SentViewModel
@@ -15,7 +16,8 @@ struct SentView: View {
                 }
                 .onAppear {
                     Task {
-                    viewModel.getSentMessage
+                     try await viewModel.getSentMessage()
+                        print(viewModel.sentMessages)
                     }
                 }
         }
@@ -23,12 +25,13 @@ struct SentView: View {
 }
 
 struct TopBar: View {
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         HStack {
             Spacer().overlay(
                 HStack {
                     Button(action: {
-                        print()
+                        dismiss()
                     }, label: {
                         Text("Done")
                             .font(.custom("851Gkktt", size: 18))
@@ -45,9 +48,10 @@ struct TopBar: View {
 }
 
 struct ListView: View {
-    @ObservedObject var viewModel: SentViewModel
+    @StateObject var viewModel: SentViewModel
     var body: some View {
-        List(viewModel.sentMessages)  { messages in
+//        List([Message(sender: "", body: "", time: nil, isOpened: false, toId: "")])  { messages in
+        List(viewModel.sentMessages, id: \.self)  { messages in
             VStack {
                 HStack {
                     Image("CassetteWidget")
@@ -55,7 +59,7 @@ struct ListView: View {
                         .scaledToFit()
                         .frame(width: 110, height: 110)
                     VStack {
-                        Text(messages.body)
+                        Text(messages.body!)
                             .font(.custom("851Gkktt", size: 18))
                         Text("yyyy/MM/dd")
                             .font(.custom("851Gkktt", size: 18))

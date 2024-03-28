@@ -16,10 +16,10 @@ class GetViewModel: NSObject, ObservableObject {
         
         let data = try await FirebaseClient.getMessages(uid: Auth.auth().currentUser!.uid)
         
-        var profileDatas: [ProfileData] = []
+        var profileDatas: [friendDatas] = []
         
         await data.asyncCompactMap { data in
-            if let profileData = try? await FirebaseClient.getProfileData(uid: data.sender) {
+            if let profileData = try? await FirebaseClient.getProfileData(uid: data.sender!) {
                 profileDatas.append(profileData)
             }
         }

@@ -73,16 +73,16 @@ enum FirebaseClient {
         try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("receivedMessages").document(documentId).setData(["isOpened" : true])
     }
     
-    static func settingProfile(data: ProfileData, uid: String) async throws {
+    static func settingProfile(data: friendDatas, uid: String) async throws {
         
         guard let encoded = try? Firestore.Encoder().encode(data) else { return }
-        try await db.collection("datas").document(uid).collection("userData").document("profileData").setData(encoded)
+        try await db.collection("datas").document(uid).setData(encoded)
         
     }
     
-    static func getProfileData(uid: String) async throws -> ProfileData {
-        let snapshot = try await db.collection("datas").document(uid).collection("userData").document("profileData").getDocument()
-        let information = try snapshot.data(as: ProfileData.self)
+    static func getProfileData(uid: String) async throws -> friendDatas {
+        let snapshot = try await db.collection("datas").document(uid).getDocument()
+        let information = try snapshot.data(as: friendDatas.self)
         return information
     }
     
