@@ -25,6 +25,7 @@
 		5D56D7E92BB534CF00FDF72E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5D56D7E82BB534CF00FDF72E /* FirebaseDatabase */; };
 		5D56D7EB2BB534CF00FDF72E /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D56D7EA2BB534CF00FDF72E /* FirebaseDatabaseSwift */; };
 		5D56D7EC2BB534FD00FDF72E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECC122BB53016002ABF34 /* HomeView.swift */; };
+		5D56D7F02BB5498600FDF72E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D56D7EF2BB5498600FDF72E /* GoogleService-Info.plist */; };
 		5DDECBDE2BB5251D002ABF34 /* GetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD32BB5251D002ABF34 /* GetViewModel.swift */; };
 		5DDECBDF2BB5251D002ABF34 /* SetProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD42BB5251D002ABF34 /* SetProfileViewModel.swift */; };
 		5DDECBE02BB5251D002ABF34 /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD52BB5251D002ABF34 /* SendViewModel.swift */; };
@@ -72,6 +73,7 @@
 		4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 851Gkktt_005.ttf; sourceTree = "<group>"; };
 		4DEE1E2E2BB3F094009FA417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5D56D7DF2BB533DE00FDF72E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5D56D7EF2BB5498600FDF72E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DDECBD32BB5251D002ABF34 /* GetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetViewModel.swift; sourceTree = "<group>"; };
 		5DDECBD42BB5251D002ABF34 /* SetProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetProfileViewModel.swift; sourceTree = "<group>"; };
 		5DDECBD52BB5251D002ABF34 /* SendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC8B8EB2BB1AAD4002317CC /* morse-app */,
+				5D56D7EF2BB5498600FDF72E /* GoogleService-Info.plist */,
 				CEC8B8EA2BB1AAD4002317CC /* Products */,
 				5D56D7E12BB534A900FDF72E /* Frameworks */,
 			);
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC8B8F42BB1AAD5002317CC /* Preview Assets.xcassets in Resources */,
+				5D56D7F02BB5498600FDF72E /* GoogleService-Info.plist in Resources */,
 				4DEE1E2F2BB3F0E8009FA417 /* 851Gkktt_005.ttf in Resources */,
 				CEC8B8F12BB1AAD5002317CC /* Assets.xcassets in Resources */,
 			);
