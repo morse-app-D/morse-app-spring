@@ -3,7 +3,7 @@ import SwiftUI
 import FirebaseFirestore
 
 struct SentView: View {
-    @ObservedObject var viewModel: SentViewModel
+    @StateObject var viewModel: SentViewModel
     var body: some View {
         ZStack {
             Color.backColor
