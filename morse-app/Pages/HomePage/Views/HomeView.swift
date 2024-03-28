@@ -7,19 +7,23 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack {
                 TopButton()
-                    .padding()
+                Spacer()
+            }
+            VStack {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(1..<10) { index in
                             Cassette()
                         }
-                        .scrollTransition(axis: .horizontal) { content, phase in
+                        .scrollTransition(axis: .horizontal) {
+                            content,
+                            phase in
                             content
                                 .scaleEffect(1 - (phase.value < 0 ? -phase.value : phase.value))
                                 .opacity(phase.isIdentity ? 1 : 0)
-                            
                         }
                     }
+                    .padding(.leading, 0)
                 }
             }
         }
@@ -29,21 +33,25 @@ struct HomeView: View {
 struct Cassette: View {
     var body: some View {
         VStack(alignment: .center) {
-            Image("CassetteWidget")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 290, height: 290)
-                .clipShape(Rectangle())
-                .padding(.bottom, 20)
+            Button(action: {
+                print("button pressed")
+            },label:  {
+                Image("CassetteWidget")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 230, height: 230)
+                    .clipShape(Rectangle())
+                    .padding(.bottom, 40)
+            })
             VStack {
                 Text("本文")
                 Text("by: \("名前")")
             }
-            .frame(width: 300, height: 145)
+            .frame(width: 230, height: 125)
             .background(.white)
             .cornerRadius(25)
         }
-        .padding(.leading, 50)
+        .padding(.trailing)
     }
 }
 
@@ -51,14 +59,16 @@ struct TopButton: View {
     var body: some View {
         HStack {
             Button(action: {
-                print()
+
             }, label: {
                 Image(systemName: "person.circle")
             })
             .font(.system(size: 32))
             .foregroundColor(.white)
-            Button(action: {}, label: {
-                Image(systemName: "plus")
+            Button(action: {
+
+            }, label: {
+                Image(systemName: "paperplane.circle")
             })
             .font(.system(size: 32))
             .foregroundColor(.white)
