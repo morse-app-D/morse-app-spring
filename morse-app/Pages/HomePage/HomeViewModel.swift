@@ -10,22 +10,43 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
     
-    func getMessages() async throws -> receivedDatas {
+    var defaltImageUrl = "https://joho.o-yake.com/wp-content/uploads/2024/02/1707648319180-1024x902.jpg"
+    @Published var uid: String = ""
+    @Published var allUserDatas: [friendDatas]?
+    @Published var receivedDatas: [receivedDatas]?
+    
+    func sendMessage(text: String, toId: String) {
+        Task {
+            let message = Message(sender: Auth.auth().currentUser!.uid, body: text, time: Timestamp(date: .now), isOpened: false, toId: toId)
+            try await FirebaseClient.sendMessage(message: message, uid: toId)
+        }
+    }
+    
+    func saveSentMessage(text: String, toId: String) {
+        Task {
+            let message = Message(sender: Auth.auth().currentUser!.uid, body: text, time: Timestamp(date: .now), isOpened: false, toId: toId)
+            try await FirebaseClient.savesentMessages(uid: message)
+        }
+    }
+    
+    func getMessages() async throws -> [receivedDatas] {
         
         let data = try await FirebaseClient.getMessages(uid: Auth.auth().currentUser!.uid)
         
-        var profileDatas: [friendDatas] = []
+        var messageDatas: [receivedDatas] = []
+        
+        print(data)
         
         await data.asyncCompactMap { data in
             if let profileData = try? await FirebaseClient.getProfileData(uid: data.sender!) {
-                profileDatas.append(profileData)
+                print(profileData)
+                messageDatas.append(morse_app.receivedDatas(sender: data.sender, body: data.body, time: data.time, isOpened: data.isOpened, toId: data.toId, name: profileData.name, imageUrl: profileData.imageUrl))
             }
         }
         
-        let receivedDatas = receivedDatas(messageDatas: data, profileDatas: profileDatas)
-        return receivedDatas
+        return messageDatas
     }
     
 }

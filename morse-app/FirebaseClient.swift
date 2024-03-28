@@ -50,7 +50,7 @@ enum FirebaseClient {
     
     static func savesentMessages(uid: Message) async throws {
         guard let encoded = try? Firestore.Encoder().encode(uid) else { return }
-        try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("sentMessage").addDocument(data: encoded)
+        try await db.collection("datas").document(Auth.auth().currentUser!.uid).collection("sentMessages").addDocument(data: encoded)
     }
     
     static func getsentMessages() async throws -> [Message] {

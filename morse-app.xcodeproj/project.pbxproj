@@ -29,9 +29,8 @@
 		5D56D7F42BB5A48700FDF72E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56D7F22BB5A48700FDF72E /* DetailView.swift */; };
 		5D56D7F52BB5A48700FDF72E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56D7F32BB5A48700FDF72E /* DetailViewModel.swift */; };
 		5D56D7F82BB5A4B700FDF72E /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56D7F62BB5A4B700FDF72E /* FriendListViewModel.swift */; };
-		5DDECBDE2BB5251D002ABF34 /* GetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD32BB5251D002ABF34 /* GetViewModel.swift */; };
+		5D56D7FC2BB5C46F00FDF72E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D56D7FB2BB5C46F00FDF72E /* Kingfisher */; };
 		5DDECBDF2BB5251D002ABF34 /* SetProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD42BB5251D002ABF34 /* SetProfileViewModel.swift */; };
-		5DDECBE02BB5251D002ABF34 /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD52BB5251D002ABF34 /* SendViewModel.swift */; };
 		5DDECBE12BB5251D002ABF34 /* SendToDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD72BB5251D002ABF34 /* SendToDB.swift */; };
 		5DDECBE22BB5251D002ABF34 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD82BB5251D002ABF34 /* CheckPermission.swift */; };
 		5DDECBE32BB5251D002ABF34 /* ChangeImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECBD92BB5251D002ABF34 /* ChangeImageSize.swift */; };
@@ -80,9 +79,7 @@
 		5D56D7F22BB5A48700FDF72E /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5D56D7F32BB5A48700FDF72E /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5D56D7F62BB5A4B700FDF72E /* FriendListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
-		5DDECBD32BB5251D002ABF34 /* GetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetViewModel.swift; sourceTree = "<group>"; };
 		5DDECBD42BB5251D002ABF34 /* SetProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetProfileViewModel.swift; sourceTree = "<group>"; };
-		5DDECBD52BB5251D002ABF34 /* SendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		5DDECBD72BB5251D002ABF34 /* SendToDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendToDB.swift; sourceTree = "<group>"; };
 		5DDECBD82BB5251D002ABF34 /* CheckPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
 		5DDECBD92BB5251D002ABF34 /* ChangeImageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeImageSize.swift; sourceTree = "<group>"; };
@@ -117,6 +114,7 @@
 				5DDECBF22BB5256A002ABF34 /* FirebaseAppCheck in Frameworks */,
 				5DDECBF02BB5256A002ABF34 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				5D56D7EB2BB534CF00FDF72E /* FirebaseDatabaseSwift in Frameworks */,
+				5D56D7FC2BB5C46F00FDF72E /* Kingfisher in Frameworks */,
 				5DDECC082BB5256A002ABF34 /* FirebaseRemoteConfigSwift in Frameworks */,
 				5DDECC062BB5256A002ABF34 /* FirebaseRemoteConfig in Frameworks */,
 				5DDECC022BB5256A002ABF34 /* FirebaseMessaging in Frameworks */,
@@ -195,8 +193,8 @@
 		199D7E392BB503CB00BE35D1 /* ProfilePage */ = {
 			isa = PBXGroup;
 			children = (
-				199D7E452BB50BB500BE35D1 /* ProfileViewModel.swift */,
 				5D56D7DF2BB533DE00FDF72E /* ProfileView.swift */,
+				199D7E452BB50BB500BE35D1 /* ProfileViewModel.swift */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -251,9 +249,7 @@
 		5DDECBD62BB5251D002ABF34 /* VariousOtherThings */ = {
 			isa = PBXGroup;
 			children = (
-				5DDECBD32BB5251D002ABF34 /* GetViewModel.swift */,
 				5DDECBD42BB5251D002ABF34 /* SetProfileViewModel.swift */,
-				5DDECBD52BB5251D002ABF34 /* SendViewModel.swift */,
 				5DDECBD72BB5251D002ABF34 /* SendToDB.swift */,
 				5DDECBD82BB5251D002ABF34 /* CheckPermission.swift */,
 				5DDECBD92BB5251D002ABF34 /* ChangeImageSize.swift */,
@@ -367,6 +363,7 @@
 				5D56D7E62BB534A900FDF72E /* FirebaseFirestoreSwift */,
 				5D56D7E82BB534CF00FDF72E /* FirebaseDatabase */,
 				5D56D7EA2BB534CF00FDF72E /* FirebaseDatabaseSwift */,
+				5D56D7FB2BB5C46F00FDF72E /* Kingfisher */,
 			);
 			productName = "morse-app";
 			productReference = CEC8B8E92BB1AAD4002317CC /* morse-app.app */;
@@ -398,6 +395,7 @@
 			mainGroup = CEC8B8E02BB1AAD4002317CC;
 			packageReferences = (
 				5DDECBE82BB5256A002ABF34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5D56D7FA2BB5C46F00FDF72E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CEC8B8EA2BB1AAD4002317CC /* Products */;
 			projectDirPath = "";
@@ -430,7 +428,6 @@
 				199D7E332BB5038100BE35D1 /* (null) in Sources */,
 				5DDECBE72BB5251D002ABF34 /* UIImagePickerView.swift in Sources */,
 				5D56D7F52BB5A48700FDF72E /* DetailViewModel.swift in Sources */,
-				5DDECBE02BB5251D002ABF34 /* SendViewModel.swift in Sources */,
 				5D56D7EC2BB534FD00FDF72E /* HomeView.swift in Sources */,
 				5DDECBE62BB5251D002ABF34 /* Models.swift in Sources */,
 				199D7E432BB50B8D00BE35D1 /* HomeViewModel.swift in Sources */,
@@ -444,7 +441,6 @@
 				CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */,
 				5DDECBE42BB5251D002ABF34 /* AsyncCompactMap.swift in Sources */,
 				5D56D7F42BB5A48700FDF72E /* DetailView.swift in Sources */,
-				5DDECBDE2BB5251D002ABF34 /* GetViewModel.swift in Sources */,
 				199D7E482BB50BC400BE35D1 /* SentViewModel.swift in Sources */,
 				198438322BB2861E00DD767B /* Manager.swift in Sources */,
 				198438382BB290D400DD767B /* SoundPlayer.swift in Sources */,
@@ -592,6 +588,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "morse-app/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "カメラのライブラリを使用します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -623,6 +620,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "morse-app/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "カメラのライブラリを使用します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -666,6 +664,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5D56D7FA2BB5C46F00FDF72E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher?fbclid=IwAR16YVgx8W_MtqBbW4NpgGk-3TfDsOMYXwImqfKhhNl78xim5ZZnd6Xnv2U";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		5DDECBE82BB5256A002ABF34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -701,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5DDECBE82BB5256A002ABF34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabaseSwift;
+		};
+		5D56D7FB2BB5C46F00FDF72E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D56D7FA2BB5C46F00FDF72E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		5DDECBE92BB5256A002ABF34 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

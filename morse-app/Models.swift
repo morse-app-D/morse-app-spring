@@ -19,12 +19,17 @@ struct Message: Codable, Identifiable, Hashable {
 }
 
 struct receivedDatas: Codable {
-    var messageDatas: [Message]
-    var profileDatas: [friendDatas]
+    let sender: String?
+    let body: String?
+    let time: Timestamp?
+    let isOpened: Bool?
+    let toId: String?
+    var name: String
+    var imageUrl: URL?
 }
 
 struct friendDatas: Codable {
     @DocumentID var uid: String?
     var name: String
-    var image: URL?
+    var imageUrl: URL?
 }

@@ -2,6 +2,7 @@
 import SwiftUI
 import FirebaseFirestore
 import FirebaseAuth
+import Kingfisher
 
 struct SentView: View {
     @StateObject var viewModel: SentViewModel
@@ -61,7 +62,7 @@ struct ListView: View {
                     VStack {
                         Text(message.body!)
                             .font(.custom("851Gkktt", size: 18))
-                        Text("yyyy/MM/dd")
+                        Text("\(message.time!.dateValue().formatted())")
                             .font(.custom("851Gkktt", size: 18))
                     }
                     .padding(.leading, 8)
