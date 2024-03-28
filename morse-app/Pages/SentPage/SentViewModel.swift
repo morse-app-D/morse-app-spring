@@ -10,6 +10,7 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
+@MainActor
 class SentViewModel: ObservableObject {
     
     @Published var sentMessages: [Message] = []
