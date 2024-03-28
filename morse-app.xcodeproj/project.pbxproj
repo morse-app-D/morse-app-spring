@@ -16,6 +16,8 @@
 		199D7E432BB50B8D00BE35D1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D7E422BB50B8D00BE35D1 /* HomeViewModel.swift */; };
 		199D7E462BB50BB500BE35D1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D7E452BB50BB500BE35D1 /* ProfileViewModel.swift */; };
 		199D7E482BB50BC400BE35D1 /* SentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D7E472BB50BC400BE35D1 /* SentViewModel.swift */; };
+		199DA7052BB538EE00B8D6DB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199DA7042BB538EE00B8D6DB /* DetailView.swift */; };
+		199DA7072BB538FF00B8D6DB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199DA7062BB538FF00B8D6DB /* DetailViewModel.swift */; };
 		4DEE1E2F2BB3F0E8009FA417 /* 851Gkktt_005.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */; };
 		5D56D7DD2BB532D400FDF72E /* SentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDECC162BB531CF002ABF34 /* SentView.swift */; };
 		5D56D7E02BB533DE00FDF72E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D56D7DF2BB533DE00FDF72E /* ProfileView.swift */; };
@@ -70,6 +72,8 @@
 		199D7E422BB50B8D00BE35D1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		199D7E452BB50BB500BE35D1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		199D7E472BB50BC400BE35D1 /* SentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentViewModel.swift; sourceTree = "<group>"; };
+		199DA7042BB538EE00B8D6DB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		199DA7062BB538FF00B8D6DB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		4DEE1E2D2BB3EF79009FA417 /* 851Gkktt_005.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 851Gkktt_005.ttf; sourceTree = "<group>"; };
 		4DEE1E2E2BB3F094009FA417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5D56D7DF2BB533DE00FDF72E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,15 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		199DA7032BB538D600B8D6DB /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				199DA7042BB538EE00B8D6DB /* DetailView.swift */,
+				199DA7062BB538FF00B8D6DB /* DetailViewModel.swift */,
+			);
+			path = DetailPage;
+			sourceTree = "<group>";
+		};
 		5D56D7DE2BB532DF00FDF72E /* FriendList */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +305,7 @@
 				5DDECBDB2BB5251D002ABF34 /* FirebaseClient.swift */,
 				5DDECC0D2BB527B8002ABF34 /* MorseManagers */,
 				199D7E3D2BB503CB00BE35D1 /* Pages */,
+				199DA7032BB538D600B8D6DB /* DetailPage */,
 				5DDECBD62BB5251D002ABF34 /* VariousOtherThings */,
 				CEC8B8F02BB1AAD5002317CC /* Assets.xcassets */,
 				5DDECC0E2BB527D7002ABF34 /* Asseets */,
@@ -413,6 +427,7 @@
 				5DDECBE72BB5251D002ABF34 /* UIImagePickerView.swift in Sources */,
 				5DDECBE02BB5251D002ABF34 /* SendViewModel.swift in Sources */,
 				5D56D7EC2BB534FD00FDF72E /* HomeView.swift in Sources */,
+				199DA7072BB538FF00B8D6DB /* DetailViewModel.swift in Sources */,
 				5DDECBE62BB5251D002ABF34 /* Models.swift in Sources */,
 				199D7E432BB50B8D00BE35D1 /* HomeViewModel.swift in Sources */,
 				198438362BB2865900DD767B /* MorseData.swift in Sources */,
@@ -422,6 +437,7 @@
 				5DDECC192BB531E3002ABF34 /* FriendListView.swift in Sources */,
 				5DDECBDF2BB5251D002ABF34 /* SetProfileViewModel.swift in Sources */,
 				5DDECBE52BB5251D002ABF34 /* FirebaseClient.swift in Sources */,
+				199DA7052BB538EE00B8D6DB /* DetailView.swift in Sources */,
 				CEC8B8EF2BB1AAD4002317CC /* ContentView.swift in Sources */,
 				5DDECBE42BB5251D002ABF34 /* AsyncCompactMap.swift in Sources */,
 				5DDECBDE2BB5251D002ABF34 /* GetViewModel.swift in Sources */,
