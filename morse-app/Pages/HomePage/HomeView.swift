@@ -174,7 +174,7 @@ struct TopButton: View {
             .font(.system(size: 40))
             .foregroundColor(.white)
             .sheet(isPresented: $toProfileView, content: {
-                ProfileView()
+                ProfileView(viewModel: .init())
             })
             Button(action: {
                 self.toSendView = true

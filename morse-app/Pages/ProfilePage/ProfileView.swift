@@ -3,6 +3,8 @@ import SwiftUI
 struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
     @State var isShowSentView: Bool = false
+    @StateObject var viewModel: ProfileViewModel
+
     var body: some View {
         ZStack {
             Color.backColor
@@ -29,17 +31,18 @@ struct ProfileView: View {
                 
                 
                 VStack(spacing: 20) {
-                    Image("CassetteWidget") // プロフィール画像
+                    Image(uiImage: urlToImage(viewModel.profile!.imageUrl!))
+                    //                    プロフィール画像
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150, height: 150)
                         .clipShape(Circle())
-                    
-                    Text("Name") // ユーザー名
+
+                    Text(viewModel.profile?.name ?? "") // ユーザー名
                         .font(.custom("851Gkktt", size: 32))
                     Text("User10") // id
                         .font(.custom("851Gkktt", size: 20))
-                    
+
                     
                     
                     HStack{
@@ -96,9 +99,22 @@ struct ProfileView: View {
                 Spacer()
             }
         }
+        .onAppear {
+            Task {
+                try await viewModel.getProfile()
+            }
+        }
     }
-}
 
-#Preview {
-    ProfileView()
+    func urlToImage(_ url: URL) -> UIImage {
+        //        let url = URL(string: string)
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data)!
+        } catch {
+            print("Error url to image")
+        }
+
+        return UIImage()
+    }
 }

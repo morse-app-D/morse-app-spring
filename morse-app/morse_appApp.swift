@@ -23,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                     }
                     Task {
                         do {
-                            let profileData = friendDatas(name: "", image: URL(string: ""))
+                            let profileData = friendDatas(name: "", imageUrl: URL(string: ""))
                             try await FirebaseClient.settingProfile(data: profileData, uid: Auth.auth().currentUser!.uid)
 
                             UserDefaults.standard.set(true, forKey: "logIned")

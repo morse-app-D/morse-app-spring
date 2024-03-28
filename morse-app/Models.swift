@@ -26,5 +26,5 @@ struct receivedDatas: Codable {
 struct friendDatas: Codable {
     @DocumentID var uid: String?
     var name: String
-    var image: URL?
+    var imageUrl: URL?
 }

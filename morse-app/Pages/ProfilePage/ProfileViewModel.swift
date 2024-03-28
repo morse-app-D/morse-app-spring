@@ -8,13 +8,14 @@
 import SwiftUI
 import FirebaseAuth
 
-class ProfileViewModel {
-    
-    @Published var getProfile: friendDatas?
-    
-    func getSentMessage() async throws {
-        getProfile = try await FirebaseClient.getProfileData(uid: Auth.auth().currentUser!.uid)
-        print(getProfile)
+class ProfileViewModel: ObservableObject {
+
+    @Published var profile: friendDatas?
+
+    func getProfile() async throws {
+        profile = try await FirebaseClient.getProfileData(uid: Auth.auth().currentUser!.uid)
+        print(profile)
+        print("yahho", profile?.imageUrl)
     }
     
 }

@@ -27,7 +27,7 @@ struct FriendListView: View {
                 ForEach(viewModel.friendList, id: \.uid) { friend in
                     VStack{ // セルごとの間隔を設定
                         HStack {
-                            Image(uiImage: urlToImage(friend.image!)) //imageはURLだから変換する必要がある
+                            Image(uiImage: urlToImage(friend.imageUrl)) 
                                 .resizable() //動的にサイズ変更
                                 .frame(width: 56, height: 56)
                                 .aspectRatio(contentMode: .fit)
