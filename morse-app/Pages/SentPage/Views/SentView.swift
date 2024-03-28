@@ -31,8 +31,8 @@ struct TopBar: View {
                     Spacer()
                 }
             )
-            Text("送信済一覧")
-                .font(.custom("851Gkktt", size: 18))
+            Text("送信済")
+                .font(.custom("851Gkktt", size: 20))
             Spacer()
         }
     }
