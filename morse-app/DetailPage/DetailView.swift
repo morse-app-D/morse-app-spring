@@ -48,16 +48,21 @@ struct DetailView: View {
             }
         }
         .task {
-            soundPlayer.setup(morse: datas) {_ in
-                Task {
-                    await soundPlayer.playMorse()
-                }
-                Task {
-                    await playText()
+            
+            self.morse = manager.toMorseMark(morse: datas)
+            
+            if let short = soundPlayer.createShort(), let long = soundPlayer.createLong() {
+                soundPlayer.setup(morse: datas, shortSound: short, longSound: long) {_ in
+                    Task {
+                        await soundPlayer.playMorse()
+                    }
+                    Task {
+                        await playText()
+                    }
                 }
             }
             
-            self.morse = manager.toMorseMark(morse: datas)
+            
         }
     }
     
@@ -93,7 +98,7 @@ struct TextView: View {
     var body: some View {
         VStack {
             Text(text)
-            Text("by: \(sender)")
+            Text("by: かっつー")
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .frame(width: 230, height: 125)
@@ -104,5 +109,5 @@ struct TextView: View {
 }
 
 #Preview {
-    DetailView(message: "いつかどんなときだってあそびたいんだーー", sender: "ひかる")
+    DetailView(message: "あさになるまでかえりたくないのです", sender: "かっつー")
 }
