@@ -70,4 +70,16 @@ class FirebaseClient {
         return information
     }
     
+    static func getAllUsers() async throws -> [friendDatas] {
+        let db = Firestore.firestore()
+        let snapshot = try? await db.collection("datas").getDocuments()
+        if let snapshot = snapshot {
+            return snapshot.documents.compactMap { document in
+                return try? document.data(as: friendDatas.self)
+            }
+        } else {
+            return []
+        }
+    }
+    
 }

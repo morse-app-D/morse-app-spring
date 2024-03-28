@@ -18,8 +18,8 @@ struct Message: Codable {
 }
 
 struct ProfileData: Codable {
-    var profileImage: URL?
-    var userName: String?
+    var imageUrl: URL?
+    var name: String?
 }
 
 struct receivedDatas: Codable {
