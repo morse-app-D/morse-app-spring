@@ -56,17 +56,18 @@ class Manager {
         
     }
     
-    func toMorceMark(morce: [[Int]]) -> String {
+    func toMorseMark(morse: [[Int]]) -> String {
         var string: String = ""
         
-        for m in morce {
+        for m in morse {
             for int in m {
                 string += toMark(num: int)
             }
+            print("morse mark 1", string)
             string += " "
         }
         
-        
+        print("morse mark 2", string)
         return string
     }
     
