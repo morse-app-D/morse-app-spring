@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct SentView: View {
+    @ObservedObject var viewModel: SentViewModel
     var body: some View {
         ZStack {
             Color.backColor
@@ -9,8 +10,13 @@ struct SentView: View {
                 VStack {
                     TopBar()
                         .padding()
-                    ListView()
+                    ListView(viewModel: viewModel)
                     Spacer()
+                }
+                .onAppear {
+                    Task {
+                    viewModel.getSentMessage
+                    }
                 }
         }
     }
@@ -39,8 +45,9 @@ struct TopBar: View {
 }
 
 struct ListView: View {
+    @ObservedObject var viewModel: SentViewModel
     var body: some View {
-        List  {
+        List(viewModel.sentMessages)  { messages in
             VStack {
                 HStack {
                     Image("CassetteWidget")
@@ -48,7 +55,7 @@ struct ListView: View {
                         .scaledToFit()
                         .frame(width: 110, height: 110)
                     VStack {
-                        Text("to：\("user.name")")
+                        Text(messages.body)
                             .font(.custom("851Gkktt", size: 18))
                         Text("yyyy/MM/dd")
                             .font(.custom("851Gkktt", size: 18))
@@ -72,6 +79,3 @@ struct ListView: View {
 }
 
 
-#Preview {
-    SentView()
-}

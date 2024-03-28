@@ -10,11 +10,12 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
-class SentViewModel {
+class SentViewModel: ObservableObject {
     
-    func getSentMessage() async throws-> [Message] {
-        let sentMessages = try await FirebaseClient.getsentMessages()
-        return sentMessages
+    @Published var sentMessages: [Message] = []
+    
+    func getSentMessage() async throws {
+        sentMessages = try await FirebaseClient.getsentMessages()
     }
     
 }

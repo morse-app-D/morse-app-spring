@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
-    
+    @State var isShowSentView: Bool = false
     var body: some View {
         ZStack {
             Color.backColor
@@ -44,6 +44,7 @@ struct ProfileView: View {
                     
                     HStack{
                         Button(action: {
+                            
                             // ボタンがタップされた時のアクション
                         }) {
                             Image(systemName: "person.2")
@@ -67,6 +68,7 @@ struct ProfileView: View {
                     
                     HStack{
                         Button(action: {
+                            isShowSentView = true
                             // ボタンがタップされた時のアクション
                         }) {
                             Image(systemName: "list.bullet")
@@ -85,6 +87,9 @@ struct ProfileView: View {
                         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.black, lineWidth: 2)) // 枠線を追加
                     }
                     .frame(width: 340, height: 64)
+                    .sheet(isPresented: $isShowSentView, content: {
+                        SentView(viewModel: .init())
+                    })
                 }
                 .background(Color.clear)
                 .edgesIgnoringSafeArea(.all)

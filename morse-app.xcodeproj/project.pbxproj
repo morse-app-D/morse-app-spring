@@ -84,7 +84,7 @@
 		5DDECBDD2BB5251D002ABF34 /* UIImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImagePickerView.swift; sourceTree = "<group>"; };
 		5DDECC122BB53016002ABF34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5DDECC162BB531CF002ABF34 /* SentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SentView.swift; path = "morse-app/Pages/SentPage/SentView.swift"; sourceTree = SOURCE_ROOT; };
-		5DDECC182BB531E3002ABF34 /* FriendListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendListView.swift; path = "morse-app/Pages/FriendListPage/Views/FriendListView.swift"; sourceTree = SOURCE_ROOT; };
+		5DDECC182BB531E3002ABF34 /* FriendListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendListView.swift; path = "morse-app/Pages/FriendList/FriendList/FriendListView.swift"; sourceTree = SOURCE_ROOT; };
 		CEC8B8E92BB1AAD4002317CC /* morse-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "morse-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC8B8EC2BB1AAD4002317CC /* morse_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = morse_appApp.swift; sourceTree = "<group>"; };
 		CEC8B8EE2BB1AAD4002317CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };

@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Message: Codable {
+struct Message: Codable, Identifiable {
     @DocumentID var id: String?
     let sender: String
     let body: String
