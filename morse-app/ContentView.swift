@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeView(viewModel: .init())
+        HomeView(viewModel: .init(), setProfileViewModel: .init())
     }
 }
 
